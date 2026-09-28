@@ -1,277 +1,447 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Estudio de Pilates</title>
+<title>Aura Pilates · Reformer y Mat en Villa Crespo | Clase de prueba por WhatsApp</title>
+<meta name="description" content="Aura Pilates – reformer y mat en grupos reducidos en Villa Crespo. Reservá tu clase de prueba por WhatsApp en 30 segundos. Lun a Vie 8–12 / 17–21, Sáb 9–13.">
+<meta name="theme-color" content="#F5F4EF">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧘</text></svg>">
+<meta property="og:title" content="Aura Pilates – Reservá tu clase de prueba">
+<meta property="og:description" content="Reformer y mat en grupos reducidos. Primera clase de prueba por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "name": "Aura Pilates – Estudio de Pilates",
+  "telephone": "+54 9 11 5555-0278",
+  "address": { "@type": "PostalAddress", "streetAddress": "Av. Corrientes 5233", "addressLocality": "Villa Crespo, Buenos Aires", "addressCountry": "AR" },
+  "openingHours": ["Mo-Fr 08:00-12:00", "Mo-Fr 17:00-21:00", "Sa 09:00-13:00"],
+  "priceRange": "$$"
+}
+</script>
 <style>
   :root {
     --bg: #F5F4EF;
+    --bg-soft: #EDEBE1;
     --card: #FFFFFF;
+    --ink: #22261F;
+    --ink-soft: #5C6357;
+    --muted: #837C70;
     --accent: #4A5D46;
+    --accent-dark: #3A4A37;
     --accent-soft: #DCE3D6;
-    --text: #22261F;
-    --text-dim: #837C70;
+    --accent-ghost: #EEF2E9;
+    --gold: #B98A2F;
     --border: #E2DED2;
+    --danger: #B6544A;
+    --radius: 16px;
+    --shadow: 0 1px 2px rgba(34,38,31,.05), 0 10px 30px -14px rgba(74,93,70,.25);
+    --max: 980px;
   }
-
   * { box-sizing: border-box; }
-
+  html { scroll-behavior: smooth; }
   body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Work Sans', sans-serif;
-    display: flex;
-    justify-content: center;
-    padding: 32px 16px 48px;
+    margin: 0; color: var(--ink);
+    font-family: 'Work Sans', system-ui, -apple-system, sans-serif;
+    background:
+      radial-gradient(700px 320px at 15% 0%, #E7EBDD 0%, transparent 60%),
+      radial-gradient(700px 340px at 90% 4%, #F0E7D2 0%, transparent 55%),
+      var(--bg);
+    display: flex; justify-content: center;
+    padding: 0 16px 96px; line-height: 1.55;
   }
+  .skip { position: absolute; left: -999px; top: 0; background: var(--accent); color: #fff; padding: 8px 12px; z-index: 99; border-radius: 0 0 10px 0; }
+  .skip:focus { left: 0; }
+  .wrap { width: 100%; max-width: var(--max); }
 
-  .card { width: 100%; max-width: 420px; }
-
-  header { text-align: center; margin-bottom: 30px; }
-
-  header h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.7rem;
-    margin: 0 0 6px;
-    color: var(--accent);
+  /* Hero */
+  .hero { text-align: center; padding: 40px 8px 18px; }
+  .logo {
+    width: 62px; height: 62px; margin: 0 auto 12px; border-radius: 50%;
+    background: linear-gradient(140deg, var(--accent) 0%, #6C8A66 100%);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-size: 30px; box-shadow: var(--shadow);
   }
-
-  header p { color: var(--text-dim); font-size: 0.95rem; margin: 0; }
-
-  section { margin-bottom: 26px; }
-
-  h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.05rem;
-    margin: 0 0 12px;
+  .badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+  .pill {
+    font-size: .78rem; font-weight: 600; border: 1px solid var(--border);
+    background: rgba(255,255,255,.75); color: var(--ink-soft);
+    border-radius: 999px; padding: 5px 13px; backdrop-filter: blur(4px);
   }
+  .pill.star { color: var(--gold); border-color: #E5D3A8; }
+  .pill.open { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .pill.closed { color: var(--ink-soft); }
+  .hero h1 { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(2rem, 5vw, 2.9rem); margin: 0 0 4px; letter-spacing: -.01em; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .tag { color: var(--ink-soft); margin: 0 0 8px; font-size: 1.03rem; }
+  .hero-meta { color: var(--muted); font-size: .88rem; display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
+  .hero-meta b { color: var(--ink); }
 
-  .reserva {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 20px;
+  /* Layout */
+  .grid { display: grid; gap: 18px; margin-top: 20px; grid-template-columns: 1fr; }
+  @media (min-width: 880px) {
+    .grid { grid-template-columns: 1.05fr .95fr; align-items: start; }
+    .sticky { position: sticky; top: 16px; }
   }
-
-  .clases {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 14px;
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow);
   }
+  .card.accent-card { background: linear-gradient(160deg, var(--accent) 0%, var(--accent-dark) 100%); border-color: var(--accent-dark); color: #fff; }
+  .card.accent-card h2 { color: #fff; }
+  .card.accent-card .sub { color: #D8E0D2; }
+  .card h2 { font-family: 'Fraunces', serif; font-size: 1.28rem; margin: 0 0 4px; font-weight: 600; }
+  .sub { color: var(--muted); font-size: .87rem; margin: 0 0 14px; }
+  .kicker { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .accent-card .kicker { color: #E4EBDD; }
 
+  /* Form */
+  .clases { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 4px; }
   .clases button {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    color: var(--text);
-    font-family: 'Work Sans', sans-serif;
-    font-size: 0.86rem;
-    padding: 8px 16px;
-    cursor: pointer;
+    border: 1.5px solid var(--border); background: #fff; color: var(--ink);
+    border-radius: 999px; font: inherit; font-size: .88rem; font-weight: 500;
+    padding: 9px 18px; cursor: pointer; transition: all .15s;
   }
-
-  .clases button.selected {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
+  .clases button:hover { border-color: var(--accent); }
+  .clases button.selected { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 4px 14px -4px rgba(74,93,70,.5); }
+  label { display: block; font-size: .83rem; color: var(--ink-soft); margin: 14px 0 5px; font-weight: 500; }
+  .accent-card label { color: #D8E0D2; }
+  input, select {
+    width: 100%; background: rgba(255,255,255,.95); border: 1.5px solid rgba(255,255,255,.35);
+    border-radius: 10px; color: var(--ink); font: inherit; font-size: 1rem; padding: 11px 12px;
   }
-
-  .reserva label {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--text-dim);
-    margin-bottom: 4px;
+  .light-inputs input, .light-inputs select { background: var(--bg); border-color: var(--border); }
+  input:focus-visible, select:focus-visible, a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--gold); outline-offset: 2px;
   }
-
-  .reserva input {
-    width: 100%;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    color: var(--text);
-    font-family: 'Work Sans', sans-serif;
-    font-size: 1rem;
-    padding: 10px 12px;
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .err-msg { display: none; color: #F0A49B; font-size: .8rem; margin-top: 4px; }
+  .light-inputs .err-msg { color: var(--danger); }
+  .invalid { border-color: #E08A7E !important; }
+  .invalid + .err-msg { display: block; }
+  button.cta {
+    width: 100%; margin-top: 18px; background: #fff; color: var(--accent-dark);
+    border: none; border-radius: 12px; font-weight: 700; font-size: 1.02rem;
+    padding: 15px; cursor: pointer; transition: transform .08s, box-shadow .15s;
+    box-shadow: 0 8px 20px -8px rgba(0,0,0,.4);
   }
-
-  .reserva input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
-
-  .reserva button.enviar {
-    width: 100%;
-    margin-top: 16px;
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 13px;
-    cursor: pointer;
+  button.cta:hover { transform: translateY(-1px); }
+  button.cta:active { transform: scale(.99); }
+  button.cta:disabled { opacity: .7; cursor: wait; transform: none; }
+  .fine { font-size: .78rem; color: #D8E0D2; margin: 10px 0 0; text-align: center; }
+  #resumen {
+    display: none; margin-top: 14px; background: rgba(255,255,255,.12);
+    border: 1px dashed rgba(255,255,255,.45); border-radius: 10px;
+    padding: 12px; font-size: .9rem;
   }
+  #resumen b { font-weight: 700; }
 
-  .reserva button.enviar:hover { opacity: 0.9; }
-
-  .horarios ul, .planes ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 0.93rem;
+  /* Listas */
+  .lista { list-style: none; padding: 0; margin: 0; }
+  .horarios li { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--border); padding: 10px 0; color: var(--muted); font-size: .93rem; }
+  .horarios li:last-child { border-bottom: 0; }
+  .horarios li span:last-child { color: var(--ink); text-align: right; font-weight: 500; }
+  .plan {
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    border: 1px solid var(--border); border-radius: 12px; padding: 13px 15px; margin-bottom: 10px;
+    background: #FCFBF7; transition: border-color .15s, transform .15s;
   }
-
-  .horarios li {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--border);
-    padding: 9px 0;
-    color: var(--text-dim);
+  .plan:hover { border-color: var(--accent); }
+  .plan.destacado { border: 1.5px solid var(--accent); background: var(--accent-ghost); position: relative; }
+  .plan .tag-top { position: absolute; top: -10px; left: 14px; background: var(--accent); color: #fff; font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-radius: 999px; padding: 2px 10px; }
+  .plan .nombre { font-weight: 600; font-size: .95rem; }
+  .plan .detalle { display: block; font-size: .8rem; color: var(--muted); font-weight: 400; }
+  .plan .precio { color: var(--accent); font-weight: 700; white-space: nowrap; font-size: 1rem; }
+  .plan button.mini {
+    border: 1.5px solid var(--accent); background: transparent; color: var(--accent);
+    border-radius: 999px; font: inherit; font-size: .8rem; font-weight: 600;
+    padding: 7px 14px; cursor: pointer; white-space: nowrap;
   }
+  .plan button.mini:hover { background: var(--accent); color: #fff; }
 
-  .horarios li span:last-child { color: var(--text); text-align: right; }
-
-  .planes li {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 12px 14px;
-    margin-bottom: 8px;
-  }
-
-  .planes li .nombre { font-weight: 500; }
-  .planes li .detalle { display: block; font-size: 0.8rem; color: var(--text-dim); font-weight: 400; }
-  .planes li .precio { color: var(--accent); font-weight: 600; white-space: nowrap; }
-
-  .links { display: flex; flex-direction: column; gap: 10px; }
-
+  .addr { font-size: .9rem; color: var(--ink-soft); margin: 0 0 12px; }
+  .addr b { color: var(--ink); }
+  .links { display: grid; gap: 10px; }
   .links a {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 13px;
-    font-size: 0.95rem;
-    background: var(--card);
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    text-decoration: none; color: var(--ink); border: 1px solid var(--border);
+    border-radius: 12px; padding: 13px; font-size: .93rem; font-weight: 500;
+    background: #fff; transition: border-color .15s, transform .15s;
   }
+  .links a:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .links a.primary { background: var(--ink); color: #fff; border-color: var(--ink); font-weight: 600; }
 
-  .links a:hover { border-color: var(--accent); }
-
-  footer { text-align: center; color: var(--text-dim); font-size: 0.75rem; margin-top: 26px; }
+  footer { text-align: center; color: var(--muted); font-size: .75rem; margin-top: 26px; }
+  .wa-float {
+    position: fixed; right: 16px; bottom: 16px; width: 56px; height: 56px;
+    background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 26px rgba(0,0,0,.3); text-decoration: none; font-size: 28px;
+  }
+  .wa-float:hover { transform: scale(1.06); }
+  @media (prefers-reduced-motion: no-preference) {
+    .wrap { animation: fade .45s ease-out; }
+  }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
+<a class="skip" href="#reserva">Saltar a reservar</a>
+<div class="wrap">
 
-<div class="card">
-  <header>
-    <h1 id="nombreNegocio">Nombre del Estudio</h1>
-    <p id="tagline">Pilates reformer y mat, cupos reducidos</p>
+  <header class="hero">
+    <div class="logo" aria-hidden="true">✦</div>
+    <div class="badges">
+      <span class="pill" id="estadoAbierto" role="status">● comprobando horario…</span>
+      <span class="pill star">★ 4.9 · 180 reseñas</span>
+      <span class="pill">Cupos reducidos · 6 por clase</span>
+    </div>
+    <h1>Aura <em>Pilates</em></h1>
+    <p class="tag" id="tagline">Reformer y mat en grupos reducidos, en el corazón de Villa Crespo</p>
+    <div class="hero-meta"><span>📍 <b id="direccionCorta">Av. Corrientes 5233, Villa Crespo</b></span><span>·</span><span>🕒 Hoy <b id="hoyHorario">8–12 / 17–21</b></span></div>
   </header>
 
-  <section class="reserva">
-    <h2>Reservar una clase de prueba</h2>
-    <div class="clases" id="clases"></div>
-    <label for="preferencia">Día u horario que te quede bien (opcional)</label>
-    <input type="text" id="preferencia" placeholder="Ej: lunes a la mañana">
-    <button class="enviar" id="pedirClase">Reservar por WhatsApp</button>
-  </section>
+  <div class="grid">
+    <div style="display:grid;gap:18px">
+      <section class="card horarios" aria-labelledby="t-hor">
+        <span class="kicker">Grilla semanal</span>
+        <h2 id="t-hor">Horarios</h2>
+        <p class="sub">Elegí el turno que te quede bien y te confirmamos por WhatsApp.</p>
+        <ul class="lista" id="listaHorarios">
+          <li><span>Lun a Vie</span><span>8:00–12:00 / 17:00–21:00</span></li>
+          <li><span>Sábados</span><span>9:00–13:00</span></li>
+        </ul>
+      </section>
 
-  <section class="horarios">
-    <h2>Horarios</h2>
-    <ul id="horarios"></ul>
-  </section>
+      <section class="card" aria-labelledby="t-planes">
+        <span class="kicker">Sin matrícula · Sin permanencia</span>
+        <h2 id="t-planes">Planes</h2>
+        <p class="sub">Tocá un plan para reservar tu prueba con ese plan en el mensaje.</p>
+        <div id="listaPlanes"></div>
+      </section>
 
-  <section class="planes">
-    <h2>Planes</h2>
-    <ul id="planes"></ul>
-  </section>
+      <section class="card light-inputs" aria-labelledby="t-ubi">
+        <span class="kicker">Cómo llegar</span>
+        <h2 id="t-ubi">El estudio</h2>
+        <p class="addr"><b id="direccionLarga">Av. Corrientes 5233, Villa Crespo, Buenos Aires</b><br><span id="comoLlegar">A 3 cuadras del subte B Malabia · Colectivos 15, 55, 110</span></p>
+        <div class="links">
+          <a id="linkMapa" href="https://maps.google.com/?q=Av.+Corrientes+5233+Villa+Crespo" target="_blank" rel="noopener">📍 Cómo llegar en Maps</a>
+        </div>
+      </section>
 
-  <section class="links">
-    <a id="linkReseña" href="#" target="_blank">Dejar una reseña</a>
-    <a id="linkInstagram" href="#" target="_blank">Instagram</a>
-    <a id="linkWhatsapp" href="#" target="_blank">Escribinos por WhatsApp</a>
-  </section>
+      <section class="card light-inputs" aria-labelledby="t-links">
+        <span class="kicker">Comunidad</span>
+        <h2 id="t-links">Reseñas y redes</h2>
+        <p class="sub">Mirá resultados reales y sumate.</p>
+        <div class="links">
+          <a id="linkResena" href="https://g.page/r/AURA-EJEMPLO/review" target="_blank" rel="noopener">⭐ Dejar una reseña en Google</a>
+          <a id="linkInstagram" href="https://instagram.com/aura.pilates.vc" target="_blank" rel="noopener">📸 Instagram — rutinas y turnos</a>
+          <a id="linkTelefono" href="tel:+5491155550278">📞 Llamar al estudio</a>
+        </div>
+      </section>
+    </div>
 
-  <footer>Powered by tarjeta NFC</footer>
+    <main>
+      <section class="card accent-card sticky" id="reserva" aria-labelledby="t-res">
+        <span class="kicker">Primera clase de prueba</span>
+        <h2 id="t-res">Reservá tu lugar</h2>
+        <p class="sub">Sin seña · Te confirmamos por WhatsApp en el día.</p>
+        <form id="reservaForm" novalidate>
+          <label for="nombre">Tu nombre</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej: Camila" required minlength="2" maxlength="60">
+          <span class="err-msg">Contanos tu nombre (mín. 2 letras).</span>
+
+          <label id="lbl-clase">Tipo de clase</label>
+          <div class="clases" id="clases" role="group" aria-labelledby="lbl-clase"></div>
+
+          <div class="row2">
+            <div>
+              <label for="turno">Turno preferido</label>
+              <select id="turno" name="turno">
+                <option value="Mañana (8–12)">Mañana (8–12)</option>
+                <option value="Tarde (17–21)">Tarde (17–21)</option>
+                <option value="Sábado (9–13)">Sábado (9–13)</option>
+                <option value="Indistinto">Indistinto</option>
+              </select>
+            </div>
+            <div>
+              <label for="plan">Plan de interés</label>
+              <select id="plan" name="plan"></select>
+            </div>
+          </div>
+
+          <div id="resumen" aria-live="polite"></div>
+          <button class="cta" type="submit" id="btnReservar">Reservar prueba por WhatsApp</button>
+          <p class="fine">Se abre WhatsApp con el mensaje ya armado. Sin tarjeta ni compromiso.</p>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <footer><span id="footNombre">Aura Pilates – Estudio de Pilates</span> · Villa Crespo · Sitio demo ficticio</footer>
 </div>
 
+<a class="wa-float" id="waFloat" href="https://wa.me/5491155550278" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">💬</a>
+<noscript><p style="text-align:center">Para reservar escribinos por WhatsApp al +54 9 11 5555-0278.</p></noscript>
+
 <script>
-  /* ======================================================
-     CONFIGURACIÓN — Editar esto para cada cliente nuevo
-     ====================================================== */
-  const CONFIG = {
-    nombreNegocio: "Nombre del Estudio",
-    tagline: "Pilates reformer y mat, cupos reducidos",
-    whatsappNumero: "5491112345678", // sin +, sin espacios, con código de país y de área
-    reseñaGoogleUrl: "https://g.page/r/EJEMPLO/review",
-    instagramUrl: "https://instagram.com/ejemplo",
-    clases: ["Reformer", "Mat", "Individual"],
-    horarios: [
-      { dias: "Lun a Vie", horas: "8:00–12:00 / 17:00–21:00" },
-      { dias: "Sábados", horas: "9:00–13:00" }
-    ],
-    planes: [
-      { nombre: "Clase suelta", detalle: "Una clase, sin compromiso", precio: "$6.500" },
-      { nombre: "Plan 8 clases", detalle: "2 veces por semana, mensual", precio: "$38.000" },
-      { nombre: "Plan 12 clases", detalle: "3 veces por semana, mensual", precio: "$52.000" }
-    ]
-  };
-  /* ====================================================== */
+'use strict';
+/* ============ CONFIG por cliente (EMPRESA FICTICIA DEMO) ============ */
+const CONFIG = {
+  nombreNegocio: "Aura Pilates",
+  nombreLargo: "Aura Pilates – Estudio de Pilates",
+  tagline: "Reformer y mat en grupos reducidos, en el corazón de Villa Crespo",
+  whatsappNumero: "5491155550278", // FICTICIO
+  telefonoDisplay: "+54 9 11 5555-0278",
+  direccionCorta: "Av. Corrientes 5233, Villa Crespo",
+  direccionLarga: "Av. Corrientes 5233, Villa Crespo, Buenos Aires",
+  comoLlegar: "A 3 cuadras del subte B Malabia · Colectivos 15, 55, 110",
+  mapsUrl: "https://maps.google.com/?q=Av.+Corrientes+5233+Villa+Crespo",
+  resenaGoogleUrl: "https://g.page/r/AURA-EJEMPLO/review",
+  instagramUrl: "https://instagram.com/aura.pilates.vc",
+  clases: ["Reformer", "Mat", "Individual"],
+  horarios: [
+    { dias: "Lun a Vie", horas: "8:00–12:00 / 17:00–21:00" },
+    { dias: "Sábados", horas: "9:00–13:00" }
+  ],
+  planes: [
+    { nombre: "Clase suelta", detalle: "Una clase, sin compromiso", precio: "$8.500" },
+    { nombre: "Plan 8 clases", detalle: "2 veces por semana · mensual", precio: "$46.000", destacado: true },
+    { nombre: "Plan 12 clases", detalle: "3 veces por semana · mensual", precio: "$62.000" }
+  ]
+};
 
-  document.getElementById('nombreNegocio').textContent = CONFIG.nombreNegocio;
-  document.title = CONFIG.nombreNegocio;
-  document.getElementById('tagline').textContent = CONFIG.tagline;
-  document.getElementById('linkReseña').href = CONFIG.reseñaGoogleUrl;
-  document.getElementById('linkInstagram').href = CONFIG.instagramUrl;
-  document.getElementById('linkWhatsapp').href = `https://wa.me/${CONFIG.whatsappNumero}`;
+const $ = (id) => document.getElementById(id);
+document.title = `${CONFIG.nombreLargo} | Clase de prueba por WhatsApp`;
+$('tagline').textContent = CONFIG.tagline;
+$('footNombre').textContent = CONFIG.nombreLargo;
+$('direccionCorta').textContent = CONFIG.direccionCorta;
+$('direccionLarga').textContent = CONFIG.direccionLarga;
+$('comoLlegar').textContent = CONFIG.comoLlegar;
+$('linkMapa').href = CONFIG.mapsUrl;
+$('linkResena').href = CONFIG.resenaGoogleUrl;
+$('linkInstagram').href = CONFIG.instagramUrl;
+$('linkTelefono').href = 'tel:+' + CONFIG.whatsappNumero;
+$('linkTelefono').textContent = `📞 Llamar al ${CONFIG.telefonoDisplay}`;
+$('waFloat').href = `https://wa.me/${CONFIG.whatsappNumero}?text=${encodeURIComponent('Hola Aura! Quiero info sobre las clases.')}`;
 
-  // Selector de tipo de clase
-  let claseSeleccionada = null;
-  const clasesDiv = document.getElementById('clases');
-  CONFIG.clases.forEach(c => {
-    const btn = document.createElement('button');
-    btn.textContent = c;
-    btn.type = 'button';
-    btn.addEventListener('click', () => {
-      claseSeleccionada = c;
-      [...clasesDiv.children].forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-    });
-    clasesDiv.appendChild(btn);
+/* Horarios sin innerHTML */
+const ulH = $('listaHorarios');
+ulH.textContent = '';
+CONFIG.horarios.forEach(h => {
+  const li = document.createElement('li');
+  const a = document.createElement('span'); a.textContent = h.dias;
+  const b = document.createElement('span'); b.textContent = h.horas;
+  li.append(a, b); ulH.append(li);
+});
+
+/* Planes como tarjetas + select sincronizado */
+const boxP = $('listaPlanes');
+const selPlan = $('plan');
+boxP.textContent = ''; selPlan.textContent = '';
+let planElegido = CONFIG.planes[1].nombre;
+CONFIG.planes.forEach(p => {
+  const div = document.createElement('div');
+  div.className = 'plan' + (p.destacado ? ' destacado' : '');
+  const left = document.createElement('div');
+  const nm = document.createElement('div'); nm.className = 'nombre'; nm.textContent = p.nombre;
+  const dt = document.createElement('span'); dt.className = 'detalle'; dt.textContent = p.detalle;
+  nm.append(dt); left.append(nm);
+  const pr = document.createElement('div'); pr.className = 'precio'; pr.textContent = p.precio;
+  const btn = document.createElement('button');
+  btn.type = 'button'; btn.className = 'mini'; btn.textContent = 'Elegir';
+  btn.setAttribute('aria-label', `Reservar prueba con ${p.nombre}`);
+  btn.addEventListener('click', () => {
+    planElegido = p.nombre; selPlan.value = p.nombre;
+    actualizaResumen();
+    $('reserva').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    $('nombre').focus({ preventScroll: true });
   });
+  if (p.destacado) {
+    const tag = document.createElement('span'); tag.className = 'tag-top'; tag.textContent = 'Más elegido';
+    div.append(tag);
+  }
+  div.append(left, pr, btn); boxP.append(div);
+  const opt = document.createElement('option');
+  opt.value = p.nombre; opt.textContent = `${p.nombre} · ${p.precio}`;
+  selPlan.append(opt);
+});
+selPlan.value = planElegido;
+selPlan.addEventListener('change', () => { planElegido = selPlan.value; actualizaResumen(); });
 
-  // Horarios
-  document.getElementById('horarios').innerHTML = CONFIG.horarios
-    .map(h => `<li><span>${h.dias}</span><span>${h.horas}</span></li>`).join('');
-
-  // Planes
-  document.getElementById('planes').innerHTML = CONFIG.planes
-    .map(p => `<li><span class="nombre">${p.nombre}<span class="detalle">${p.detalle}</span></span><span class="precio">${p.precio}</span></li>`)
-    .join('');
-
-  // Botón de reserva → arma el mensaje y abre WhatsApp
-  document.getElementById('pedirClase').addEventListener('click', () => {
-    const preferencia = document.getElementById('preferencia').value.trim();
-    let mensaje = claseSeleccionada
-      ? `Hola! Quiero reservar una clase de prueba de ${claseSeleccionada}.`
-      : `Hola! Quiero reservar una clase de prueba.`;
-    if (preferencia) mensaje += ` Me quedaría bien: ${preferencia}.`;
-
-    const url = `https://wa.me/${CONFIG.whatsappNumero}?text=${encodeURIComponent(mensaje)}`;
-    window.open(url, '_blank');
+/* Clases: pills accesibles */
+let claseSel = CONFIG.clases[0];
+const boxC = $('clases');
+CONFIG.clases.forEach((c, i) => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.textContent = c;
+  b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+  if (i === 0) b.classList.add('selected');
+  b.addEventListener('click', () => {
+    claseSel = c;
+    [...boxC.children].forEach(x => { x.classList.remove('selected'); x.setAttribute('aria-pressed', 'false'); });
+    b.classList.add('selected'); b.setAttribute('aria-pressed', 'true');
+    actualizaResumen();
   });
+  boxC.append(b);
+});
+
+/* Badge abierto */
+function estaAbierto(d = new Date()) {
+  const dia = d.getDay(), h = d.getHours() + d.getMinutes() / 60;
+  if (dia === 0) return false;
+  if (dia === 6) return h >= 9 && h < 13;
+  return (h >= 8 && h < 12) || (h >= 17 && h < 21);
+}
+function pintaEstado() {
+  const el = $('estadoAbierto');
+  const ok = estaAbierto();
+  el.textContent = ok ? '● Abierto ahora' : '● Cerrado ahora';
+  el.classList.toggle('open', ok);
+  el.classList.toggle('closed', !ok);
+}
+pintaEstado(); setInterval(pintaEstado, 60000);
+
+/* Memoria */
+try {
+  const last = JSON.parse(localStorage.getItem('aura-reserva') || '{}');
+  if (last.nombre) $('nombre').value = last.nombre;
+  if (last.turno) $('turno').value = last.turno;
+} catch {}
+
+/* Resumen vivo */
+function actualizaResumen() {
+  const box = $('resumen');
+  const n = $('nombre').value.trim();
+  if (!n) { box.style.display = 'none'; return; }
+  box.style.display = 'block';
+  box.textContent = '';
+  box.append('Prueba: ');
+  const b = document.createElement('b');
+  b.textContent = `${claseSel} · ${$('turno').value} · ${planElegido} · ${n}`;
+  box.append(b);
+}
+['nombre', 'turno'].forEach(id => $(id).addEventListener('input', actualizaResumen));
+
+/* Submit con validación */
+$('reservaForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const nom = $('nombre');
+  const ok = nom.value.trim().length >= 2;
+  nom.classList.toggle('invalid', !ok);
+  if (!ok) { nom.focus(); return; }
+  const btn = $('btnReservar');
+  btn.disabled = true; btn.textContent = 'Abriendo WhatsApp…';
+  try { localStorage.setItem('aura-reserva', JSON.stringify({ nombre: nom.value.trim(), turno: $('turno').value })); } catch {}
+  const mensaje = `Hola ${CONFIG.nombreNegocio}! Soy ${nom.value.trim()}. Quiero reservar una clase de prueba de ${claseSel} en el turno ${$('turno').value}. Me interesa el ${planElegido}. Gracias!`;
+  window.open(`https://wa.me/${CONFIG.whatsappNumero}?text=${encodeURIComponent(mensaje)}`, '_blank', 'noopener');
+  setTimeout(() => { btn.disabled = false; btn.textContent = 'Reservar prueba por WhatsApp'; }, 1500);
+});
 </script>
-
 </body>
 </html>
